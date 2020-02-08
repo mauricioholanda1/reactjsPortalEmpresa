@@ -27,10 +27,14 @@ export default function Header(props) {
           <Typography variant="h6" className={classes.title}>
             {props.title}
           </Typography>
-          <Button className={classes.menuButton} color="inherit">
+          <Button
+            className={classes.menuButton}
+            color="inherit"
+            href="/extrato"
+          >
             Extrato
           </Button>
-          <Button className={classes.menuButton} color="inherit">
+          <Button className={classes.menuButton} color="inherit" href="/">
             Funcionários
           </Button>
         </Toolbar>
