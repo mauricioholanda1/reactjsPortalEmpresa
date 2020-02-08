@@ -16,49 +16,54 @@ export default function ExtratoDebito({extratoDebito, calculoDebito}) {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="spanning table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="center" colSpan={3}>
-              Tabela de Gastos
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.title}>Descrição</TableCell>
-            <TableCell className={classes.title} align="right">
-              Data
-            </TableCell>
-            <TableCell className={classes.title} align="right">
-              Valor
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {extratoDebito.map(extratoDebito => (
-            <TableRow key={extratoDebito.description}>
-              <TableCell>{extratoDebito.description}</TableCell>
-              <TableCell align="right">{extratoDebito.data}</TableCell>
-              <TableCell align="right">
-                ${ccyFormat(extratoDebito.valor)}
+    <div className={classes.content}>
+      <TableContainer component={Paper}>
+        <Table className={classes.table} aria-label="spanning table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center" colSpan={3}>
+                Tabela de Gastos
               </TableCell>
             </TableRow>
-          ))}
+            <TableRow>
+              <TableCell className={classes.title}>Descrição</TableCell>
+              <TableCell className={classes.title} align="right">
+                Data
+              </TableCell>
+              <TableCell className={classes.title} align="right">
+                Valor
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {extratoDebito.map(extratoDebito => (
+              <TableRow key={extratoDebito.description}>
+                <TableCell>{extratoDebito.description}</TableCell>
+                <TableCell align="right">{extratoDebito.data}</TableCell>
+                <TableCell align="right">
+                  ${ccyFormat(extratoDebito.valor)}
+                </TableCell>
+              </TableRow>
+            ))}
 
-          <TableRow>
-            <TableCell rowSpan={2} />
-            <TableCell colSpan={1}>Total</TableCell>
-            <TableCell align="right">${ccyFormat(calculoDebito)}</TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-    </TableContainer>
+            <TableRow>
+              <TableCell rowSpan={2} />
+              <TableCell colSpan={1}>Total</TableCell>
+              <TableCell align="right">${ccyFormat(calculoDebito)}</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 }
 
 const useStyles = makeStyles({
+  content: {
+    marginTop: 20
+  },
   table: {
-    minWidth: 300
+    minWidth: 200
   },
   title: {
     fontWeight: "bold"

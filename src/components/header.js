@@ -15,16 +15,18 @@ export default function Header(props) {
           <Typography variant="h6" className={classes.title}>
             {props.title}
           </Typography>
-          <Button
-            className={classes.menuButton}
-            color="inherit"
-            href="/extrato"
-          >
-            Extrato
-          </Button>
-          <Button className={classes.menuButton} color="inherit" href="/">
-            Funcionários
-          </Button>
+          <div align="right" className={classes.buttons}>
+            <Button
+              className={classes.menuButton}
+              color="inherit"
+              href="/extrato"
+            >
+              Extrato
+            </Button>
+            <Button className={classes.menuButton} color="inherit" href="/">
+              Funcionários
+            </Button>
+          </div>
         </Toolbar>
       </AppBar>
     </div>
@@ -40,10 +42,14 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "none"
   },
   title: {
-    flexGrow: 1,
     fontSize: 30
   },
   appBar: {
-    backgroundColor: "#e84e0f"
+    backgroundColor: "#e84e0f",
+    display: "flex",
+    flexWrap: "wrap"
+  },
+  buttons: {
+    flex: 1
   }
 }));

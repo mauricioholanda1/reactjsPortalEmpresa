@@ -27,7 +27,7 @@ const Funcionarios = ({funcionarios}) => {
                 <Typography variant="h5" className={classes.text}>
                   {funcionarios.nome}
                 </Typography>
-                <Typography variant="h7" className={classes.text}>
+                <Typography className={classes.text}>
                   {funcionarios.description}
                 </Typography>
               </div>
