@@ -1,23 +1,32 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import actions from "./redux/actions";
-import "./App.css";
+import Funcionarios from "./components/funcionarios";
+import Header from "./components/header";
 
 class App extends Component {
-  componentDidMount() {
-    const {getLista} = this.props;
-    getLista();
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
+
+  componentDidMount() {
+    this.chamadaAPi();
+  }
+
+  chamadaAPi = async () => {
+    const {getLista} = this.props;
+    await getLista();
+  };
 
   render() {
     const {lista} = this.props;
-    console.log("lista", lista);
+    const funcionarios = lista.listaData.docs;
 
     return (
       <div className="container">
-        <div className="content">
-          <h1>React</h1>
-        </div>
+        <Header title="Portal Empresa - Soma" />
+        <Funcionarios funcionarios={funcionarios} />
       </div>
     );
   }
