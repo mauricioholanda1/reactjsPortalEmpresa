@@ -23,7 +23,11 @@ export default function Header(props) {
             >
               Extrato
             </Button>
-            <Button className={classes.menuButton} color="inherit" href="/">
+            <Button
+              className={classes.menuButton}
+              color="inherit"
+              href="/funcionarios"
+            >
               Funcionários
             </Button>
           </div>
