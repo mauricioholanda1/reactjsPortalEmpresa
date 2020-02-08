@@ -1,7 +1,10 @@
-import { listaTypes } from '../actions/actionsTypes';
+import {listaTypes} from "../actions/actionsTypes";
 
-const initialState = {};
-
+const initialState = {
+  listaData: {
+    docs: []
+  }
+};
 export default function listaReducer(state = initialState, action) {
   switch (action.type) {
     case listaTypes.GET_LISTA:
@@ -17,7 +20,7 @@ export default function listaReducer(state = initialState, action) {
       };
 
     case listaTypes.GET_LISTA_ERROR:
-      return { ...state, error: action.error };
+      return {...state, error: action.error};
 
     default:
       return state;
