@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-// import userReducer from './userReducer';
+import extratoReducer from './extratoReducer';
 import listaReducer from './listaReducer';
 
 export default combineReducers({
   lista: listaReducer,
-  // user: userReducer,
+  extrato: extratoReducer,
 });

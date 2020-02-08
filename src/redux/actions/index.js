@@ -1,10 +1,9 @@
-// import * as userActions from './userActions';
-import * as listaActions from './listaActions';
+import * as extratoActions from "./extratoActions";
+import * as listaActions from "./listaActions";
 
 const actions = {
   lista: listaActions,
-  // user: userActions,
-
+  extrato: extratoActions
 };
 
 export default actions;
