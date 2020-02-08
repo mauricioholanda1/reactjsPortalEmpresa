@@ -6,7 +6,6 @@ export function get() {
     dispatch(loading(true));
     try {
       const response = await apiLista.getLista();
-      console.log("getLista", response  );
       if (response.data) {
         dispatch({
           type: listaTypes.GET_LISTA,

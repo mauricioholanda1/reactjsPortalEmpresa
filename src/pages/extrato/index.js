@@ -25,10 +25,8 @@ class Extrato extends Component {
 
   render() {
     const {extrato} = this.props;
-    console.log("extrato", extrato);
     const extratoDebito = extrato.extratoData.docs;
     const calculoDebito = this.totalDivida(extratoDebito);
-    console.log("calculoDebito", calculoDebito);
     return (
       <div>
         <Header title="Portal Empresa - Soma" />
