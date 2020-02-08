@@ -3,24 +3,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-
-const useStyles = makeStyles({
-  root: {
-    width: 300,
-    padding: 10,
-    margin: 20
-  },
-  title: {
-    fontSize: 14
-  },
-  pos: {
-    marginBottom: 12
-  },
-  content: {
-    display: "flex",
-    flexWrap: "wrap"
-  }
-});
+import Divider from "@material-ui/core/Divider";
 
 const Funcionarios = ({funcionarios}) => {
   const classes = useStyles();
@@ -31,20 +14,23 @@ const Funcionarios = ({funcionarios}) => {
         {funcionarios.map(funcionarios => (
           <Card className={classes.root}>
             <CardContent>
-              <Typography
-                className={classes.title}
-                color="textSecondary"
-                gutterBottom
-              >
-                {funcionarios._id}
-              </Typography>
-              <Typography variant="h5" component="h2"></Typography>
-              <Typography className={classes.pos}>
-                {funcionarios.nome}
-              </Typography>
-              <Typography variant="body2" component="p">
-                {funcionarios.description}
-              </Typography>
+              <div className={classes.headerCard}>
+                <Typography variant="h5" className={classes.title}>
+                  Funcionário
+                </Typography>
+                <Typography variant="h6" className={classes.text}>
+                  N° {funcionarios._id}
+                </Typography>
+              </div>
+              <Divider />
+              <div className={classes.body}>
+                <Typography variant="h5" className={classes.text}>
+                  {funcionarios.nome}
+                </Typography>
+                <Typography variant="h7" className={classes.text}>
+                  {funcionarios.description}
+                </Typography>
+              </div>
             </CardContent>
           </Card>
         ))}
@@ -53,3 +39,39 @@ const Funcionarios = ({funcionarios}) => {
   );
 };
 export default Funcionarios;
+
+const useStyles = makeStyles({
+  content: {
+    paddingTop: 20,
+    display: "flex",
+    flexWrap: "wrap",
+    paddingLeft: "10%",
+    paddingRight: "10%",
+    fontFamily: "monospace",
+    justifyContent: "center"
+  },
+  root: {
+    width: 300,
+    padding: 10,
+    margin: 20
+  },
+  text: {
+    fontFamily: "monospace"
+  },
+  infoDiv: {
+    display: "flex",
+    flexDirection: "row",
+    marginBottom: 12
+  },
+  title: {
+    fontFamily: "inherit"
+  },
+  headerCard: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-between"
+  },
+  body: {
+    paddingTop: 10
+  }
+});
