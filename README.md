@@ -1,3 +1,8 @@
+#REACT APP
+
+-App feito para estudos da Context api e integração com firebase auth e firebaseDB
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
